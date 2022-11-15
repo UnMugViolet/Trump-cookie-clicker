@@ -49,6 +49,22 @@ button {
     transform: translateX(0%);
   }
 }
+@-webkit-keyframes drop-down-animation {
+  from {
+    transform: translateX(110%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes drop-down-animation {
+  from {
+    transform: translateX(110%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
 /* Classes fonctionnelles */
 .container {
   width: 80%;
@@ -254,9 +270,9 @@ h3 {
 .place-list {
   right: 0px;
 }
-.place-list .drop-down-list {
-  display: flex;
-  width: 85vw;
+.place-list #drop-down-list {
+  display: block;
+  width: 87.5vw;
   right: 0px;
   color: #c6c6c6;
   z-index: 2;
@@ -264,4 +280,10 @@ h3 {
   line-height: 1vh;
   margin-top: 10.8vh;
   position: absolute;
+}
+.place-list p {
+  -webkit-animation: drop-down-animation linear 30s;
+          animation: drop-down-animation linear 30s;
+  transform: translateX(-100%);
+  font-size: 15px;
 }/*# sourceMappingURL=styles.css.map */

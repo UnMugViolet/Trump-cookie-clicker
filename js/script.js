@@ -4,6 +4,7 @@ window.onload = function alert() {
     let space = document.getElementById("news-animation");
     space.innerHTML = name + ", a new competitor to the great trump's fortune";
     space.classList = 'animated';
+
 }   
 
 
@@ -43,19 +44,18 @@ window.onload = function alert() {
 
     // Appel un son 
     let sound_fake_news = new Audio("audio/Fake news jingle.mp3");
+    let sound_wrong = new Audio("audio/Wrong Sound Effect.mp3");
 
 
-        function nicelly_formatted(counter) {
-            if(counter < 1000) return counter
-            return '1K'
-        }
+
+
 
 // Click sur image + renvoie le nombre
         async function maj() {
   
             counter = counter + click_incrementeur;
-            document.querySelector("h3").innerHTML = nicelly_formatted(counter) ;
-            document.title = counter + " Money";
+            document.querySelector("h3").innerHTML = counter ;
+            document.title = counter ;
 
 
 // Breaking news tableau
@@ -68,6 +68,7 @@ const news =[
     {sentence: "Donald asks for your birth certificate to prove that you are not an immigrant",value: 100000},
     {sentence: "Congratulation you have earned 1M $, Trump has 3200 times more filthy thing !",value: 1000000}
 ]
+
 
 // Nouvelle news
 
@@ -103,6 +104,7 @@ const news =[
             }
 
             else if(counter<multiply_cost){
+                sound_wrong.play();
                 alert("You can't afford that, you poor thing !")
                 alert("You didn't buy the multiplier")
             }
@@ -139,6 +141,7 @@ const news =[
              }
 
              else if(counter<multiply_cost){
+                sound_wrong.play();
                 alert("You can't afford that, you poor thing !")
                 alert("You didn't buy the money printer")
             }
@@ -181,6 +184,7 @@ const news =[
              }
 
              else if(counter<multiply_cost){
+                sound_wrong.play();
                 alert("You can't afford that, you poor thing !")
                 alert("You didn't buy the house")
             }

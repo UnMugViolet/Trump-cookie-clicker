@@ -54,6 +54,11 @@ button {
     to { transform: translateX(0%); }
   }
 
+@keyframes drop-down-animation {
+    from { transform: translateX(110%);}
+    to { transform: translateX(-100%); }
+  }
+
 /* Classes fonctionnelles */
 
 .container{
@@ -105,10 +110,7 @@ h3{
 .button-click{
     border: none;
     margin-left: 145px;
-    
-
 }
-
 
   .animate-trump{
     cursor: pointer;
@@ -293,9 +295,9 @@ h3{
 .place-list{
     right: 0px;
 
-    .drop-down-list {
-        display: flex;
-        width: 85vw;
+    #drop-down-list {
+        display: block;
+        width: 87.5vw;
         right: 0px;
         color: #c6c6c6;
         z-index: 2;
@@ -303,9 +305,15 @@ h3{
         line-height: 1vh;
         margin-top: 10.8vh;
         position: absolute;
-    
       }
-    
+
+      p{
+        animation: drop-down-animation linear 30s;
+        transform: translateX(-100%);
+        font-size: 15px;
+    }
+      
+
 }
 
   
