@@ -23,6 +23,15 @@ header {
   margin-top: 50px;
 }
 
+section {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+button {
+  margin: 11px;
+}
+
 @-webkit-keyframes text-animation {
   from {
     transform: translateX(200%);
@@ -49,11 +58,6 @@ header {
 .flex-container {
   display: flex;
   justify-content: space-between;
-}
-
-section {
-  padding-top: 30px;
-  padding-bottom: 30px;
 }
 
 .vertical-align {
@@ -95,18 +99,15 @@ h3 {
 
 .animate-trump {
   cursor: pointer;
+  position: relative;
 }
 
 .animate-trump:hover {
-  scale: 1.03;
+  scale: 1.02;
 }
 
-.trump-click:active {
-  top: 20px;
-}
-
-button {
-  margin: 11px;
+.animate-trump:active {
+  top: 2px;
 }
 
 .custom-btn {
@@ -242,10 +243,25 @@ button {
 }
 .breaking-news h3 {
   text-transform: uppercase;
-  font-size: 40px;
-  margin-top: 1.5vh;
+  font-size: 35px;
+  margin-top: 2vh;
   position: absolute;
   left: 15%;
   z-index: 0;
   transform: translateX(0%);
+}
+
+.place-list {
+  right: 0px;
+}
+.place-list .drop-down-list {
+  display: flex;
+  width: 85vw;
+  right: 0px;
+  color: #c6c6c6;
+  z-index: 2;
+  overflow: hidden;
+  line-height: 1vh;
+  margin-top: 10.8vh;
+  position: absolute;
 }/*# sourceMappingURL=styles.css.map */

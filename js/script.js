@@ -20,13 +20,14 @@ window.onload = function alert() {
     // counter + click
     let counter = 0;
     let click_incrementeur = 1;
+    let rent_house = 250;
     let amount_money_printer = 0;
     let amount_real_estate = 0;
 
     // Cost
     let multiply_cost = 20;
     let moneyprinter_cost = 300;
-    let real_estate_cost = 10;
+    let real_estate_cost = 10000;
 
     // Speed
     let printing_speed = 1000;
@@ -34,27 +35,54 @@ window.onload = function alert() {
 
     // Incrémenteurs
     let increment = 0;
-    
-    
 
+    // fonction attente de 1ms
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    // Appel un son 
+    let sound_fake_news = new Audio("audio/Fake news jingle.mp3");
+
+
+        function nicelly_formatted(counter) {
+            if(counter < 1000) return counter
+            return '1K'
+        }
 
 // Click sur image + renvoie le nombre
-        function maj() {
+        async function maj() {
   
             counter = counter + click_incrementeur;
-            document.querySelector("h3").innerHTML = counter ;
+            document.querySelector("h3").innerHTML = nicelly_formatted(counter) ;
             document.title = counter + " Money";
 
-            // Nouvelle news
 
-            if(counter >= news[increment].value){
-                // boucle controlée
+// Breaking news tableau
+
+const news =[
+    {sentence: "Trump made a press release mocking your wealth",value: 100},
+    {sentence: "Trump accuses you of being Mexican",value: 1000},
+    {sentence: "Donald is requiring 80% of your company because you used his name ",value: 10000},
+    {sentence: "Trump sues you for using his fame to make money",value: 50000},
+    {sentence: "Donald asks for your birth certificate to prove that you are not an immigrant",value: 100000},
+    {sentence: "Congratulation you have earned 1M $, Trump has 3200 times more filthy thing !",value: 1000000}
+]
+
+// Nouvelle news
+
+        if(counter >= news[increment].value){
                 
-                increment = increment + 1;
+            // boucle controlée
+            increment = increment + 1;
 
-                let space = document.getElementById("news-animation");
-                space.innerHTML = document.querySelector("#news-animation").innerHTML = news[increment].sentence;
-                space.classList = 'animated';
+            let space = document.getElementById("news-animation");
+            space.innerHTML = document.querySelector("#news-animation").innerHTML = news[increment].sentence;
+            space.classList.remove('animated')
+            await sleep(1);
+            space.classList.add('animated');
+
+            sound_fake_news.play();
 
     }
             
@@ -121,12 +149,20 @@ window.onload = function alert() {
 
         }
 
+        function maj_house(){
+            counter = counter + rent_house;
+            document.querySelector("h3").innerHTML = counter ;
+
+        }
+
 // Auto click real estate
 
         function real_estate(){
             if(counter >= real_estate_cost){
 
-                setInterval((maj*100),house_rent_speed)
+                setInterval(maj_house,house_rent_speed)
+                // Augmente rent en exponentiel
+                rent_house = rent_house*2;
 
                 // Retire le prix et affiche
 
@@ -136,7 +172,7 @@ window.onload = function alert() {
                 // Expo cost et affiche
 
                 real_estate_cost = real_estate_cost * 5; 
-                display_real_estate_cost.innerHTML = 'Cost ' + real_estate_cost;
+                display_real_estate_cost.innerHTML = 'Cost : ' + real_estate_cost;
 
                 // Ajout du score
                 amount_real_estate = amount_real_estate + (1);
@@ -152,14 +188,6 @@ window.onload = function alert() {
             else{
                 
             }
-
+            
             }
 
-    const news =[
-        {sentence: "Trump made a press release mocking your wealth",value: 100},
-        {sentence: "lala",value: 1000},
-        {sentence: "Donald Trump is requiring 70% of your company because you used his name ",value: 10000},
-        {sentence: "Blabla",value: 50000},
-        {sentence: "Blabla",value: 100000},
-        {sentence: "Blabla",value: 1000000}
-    ]
