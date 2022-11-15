@@ -1,0 +1,290 @@
+/* === MISE EN PAGE GENERAL ===*/
+
+
+$title-font:'Montserrat', sans-serif;
+$main-font:'Poppins', sans-serif;
+
+$white-main : #FEFEFE;
+$white : #FFFFFF;
+
+$main-black:#4d383f;
+$black:#0000;
+
+
+// Variable
+
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #F0F0F0;
+}
+
+img{
+    width: 100%;
+    display: block;
+}
+
+a{
+    text-decoration: none;
+    color: $black;
+}
+
+header{
+    margin-top: 50px;
+}
+
+// Animations 
+
+@keyframes text-animation {
+    from { transform: translateX(200%);}
+    to { transform: translateX(0%); }
+  }
+
+/* Classes fonctionnelles */
+
+.container{
+    width:  80%;
+    margin: 0 auto;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+section{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.vertical-align{
+    display: flex;
+    align-items: center;
+}
+
+.text-center{
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+
+
+/* Titre */
+
+h1{
+    font-size: 70px;
+    font-family:$title-font;
+}
+
+h2{
+    width: fit-content;
+    font-weight: 700;
+    font-size: 30px;
+    font-family: $main-font;
+}
+
+h3{
+    font-family: $main-font;
+    font-weight: 700;
+    font-size: 25px;
+    
+}
+
+/* Bouton */
+
+.button-click{
+    border: none;
+    margin-left: 145px;
+    
+
+}
+
+
+  .animate-trump{
+    cursor: pointer;
+  }
+
+  .animate-trump:hover{
+    scale: 1.03;
+  }
+
+  .trump-click:active{
+    top : 20px;
+  }
+
+  
+button {
+    margin: 11px;
+    
+  }
+  .custom-btn {
+    width: 280px;
+    height: 40px;
+    color: $main-black;
+    border-radius: 5px;
+    padding: 5px 25px;
+    font-family: $main-font;
+    font-size:small;
+    font-weight: 200;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+  }
+
+  .btn-x2 {
+    border: none;
+    color: #000;
+  }
+  .btn-x2:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    direction: rtl;
+    z-index: -1;
+    box-shadow:
+     -7px -7px 20px 0px #fff9,
+     -4px -4px 5px 0px #fff9,
+     7px 7px 20px 0px #0002,
+     4px 4px 5px 0px #0001;
+    transition: all 0.3s ease;
+  }
+
+  .btn-x2:hover {
+    color: #000;
+    font-weight: 700;
+  }
+  .btn-x2:hover:after {
+    left: auto;
+    right: 0;
+    width: 100%;
+  }
+  .btn-x2:active {
+    top: 2px;
+  }
+  
+  
+/* === HEADER ===*/
+/* === MAIN ===*/
+
+#hero{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 84%;
+
+    h1{
+        font-family: $title-font;
+        color: $main-black;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 40px;
+        margin: 0;
+    }
+
+.inventory{
+    width: 12%;
+    text-align:center;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.store{
+    width: 18%;
+
+}
+
+.icon-store{
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+
+    p{
+        font-family: $title-font;
+    }
+}
+
+.margin-store{
+    margin-bottom: 30px;
+}
+
+#money-count{
+    margin: 0 auto;
+    text-align: center;
+}
+
+}
+
+.image-hover{
+    width: 70%;
+    margin: 0 auto;
+    align-items: left;
+    
+
+}
+
+.text-align-center{
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.icon{
+    width: 50px;
+    height: 50px;
+    gap: 20px;
+}
+
+.icon-features{
+    margin: 0 auto;
+    width: 40%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+
+
+/* === FOOTER ===*/
+
+.breaking-news{
+    position : absolute;
+    bottom: 0;
+    z-index: 1;
+        overflow: hidden;
+
+    .text-title{
+        position: relative;
+
+    }
+    h3.animated {
+
+        animation: text-animation 1s;
+    }
+    h3{
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 1.5vh;
+        position: absolute;
+        left: 15%;
+        z-index: 0;
+
+        transform: translateX(0%);
+    }
+    
+}
+
+
